@@ -18,6 +18,22 @@
         </receiver>
         <activity
                 android:name=".ThirdPartMessageActivity"
-                android:exported="true" />
+                android:exported="true"
+                android:launchMode="singleInstance"
+                android:screenOrientation="portrait">
+            <!--Vivo scheme 配置开始  -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${applicationId}"
+                    android:path="/thirdpush"
+                    android:scheme="agoo" />
+            </intent-filter>
+            <!-- scheme 配置结束  -->
+        </activity>
     </application>
 </manifest>
