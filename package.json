@@ -1,6 +1,6 @@
 {
     "name": "react-native-aliyun-push",
-    "version": "1.0.22",
+    "version": "1.1.0",
     "description": "A react native wrapper for aliyun push SDK",
     "main": "index.js",
     "repository": {
@@ -26,8 +26,6 @@
     "bugs": {
         "url": "https://github.com/wonday/react-native-aliyun-push/issues"
     },
-    "dependencies": {
-    },
-    "peerDependencies": {
-    }
+    "dependencies": {},
+    "peerDependencies": {}
 }

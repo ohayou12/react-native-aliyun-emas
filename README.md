@@ -3,9 +3,18 @@
 
 [阿里云移动推送](https://www.aliyun.com/product/cps?spm=5176.2020520107.0.0.fgXGFp)react-native封装组件
 
+####目前已完成Android12的匹配升级，升级到阿里云EMAS的SDK 3.7.4版本
+####注意EMAS SDK 3.7.4 的Android配置发生了变化，[具体参考](https://github.com/Evan-Future/react-native-aliyun-push/issues/1)
+
+
 
 <details>
   <summary>修改履历</summary> 
+v1.1.0
+
+1. 完成Android12的匹配
+2. 更新阿里云EMAS SDK版本至3.7.4
+
 v1.0.22
 
 1. 修正alicloud-android-utdid Android编译错误
