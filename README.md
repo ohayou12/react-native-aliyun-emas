@@ -1,10 +1,14 @@
-# react-native-aliyun-push
-[![npm](https://img.shields.io/npm/v/react-native-aliyun-push.svg?style=flat-square)](https://www.npmjs.com/package/react-native-aliyun-push)
+# react-native-aliyun-emas
+[![npm](https://img.shields.io/npm/v/react-native-aliyun-emas.svg?style=flat-square)](https://www.npmjs.com/package/react-native-aliyun-emas)
+
+#### 首先感谢wonday的贡献，[此库是在wonday库的基础上进行升级维护](https://github.com/wonday/react-native-aliyun-push)
+
+#### 为了不造成重名问题，现更名为：react-native-aliyun-emas
 
 [阿里云移动推送](https://www.aliyun.com/product/cps?spm=5176.2020520107.0.0.fgXGFp)react-native封装组件
 
-####目前已完成Android12的匹配升级，升级到阿里云EMAS的SDK 3.7.4版本
-####注意EMAS SDK 3.7.4 的Android配置发生了变化，[具体参考](https://github.com/Evan-Future/react-native-aliyun-push/issues/1)
+#### 目前已完成Android12的匹配升级，升级到阿里云EMAS的SDK 3.7.4版本
+#### 注意EMAS SDK 3.7.4 的Android配置发生了变化，[具体参考](https://github.com/Evan-Future/react-native-aliyun-emas/issues/1)
 
 
 
@@ -50,7 +54,7 @@ v1.0.15
 1. 增加getInitialMessage方法
 2. add sample
 
-[[more]](https://github.com/wonday/react-native-aliyun-push/releases)
+[[more]](https://github.com/evan0204/react-native-aliyun-emas/releases)
 </details>
 
 ## 前提
@@ -61,13 +65,13 @@ v1.0.15
 
 ReactNative 0.59.x及以前
 ```
-npm install react-native-aliyun-push --save
-react-native link react-native-aliyun-push
+npm install react-native-aliyun-emas --save
+react-native link react-native-aliyun-emas
 ```
 
 ReactNative 0.60.x及以后
 ```
-yarn add react-native-aliyun-push
+yarn add react-native-aliyun-emas
 ```
 
 <details>
@@ -88,7 +92,7 @@ allprojects {
             url "http://maven.aliyun.com/nexus/content/repositories/releases/"
         }
         flatDir {
-            dirs project(':react-native-aliyun-push').file('libs')
+            dirs project(':react-native-aliyun-emas').file('libs')
         }
         // 添加结束
     }
@@ -96,14 +100,14 @@ allprojects {
 ```
 2. 确保settings.gradle中被添加如下代码：
 ```
-include ':react-native-aliyun-push'
-project(':react-native-aliyun-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-aliyun-push/android')
+include ':react-native-aliyun-emas'
+project(':react-native-aliyun-emas').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-aliyun-emas/android')
 ```
 3. 确保app/build.gradle中被添加如下代码：
 ```
 dependencies {
     //下面是被添加的代码
-    compile project(':react-native-aliyun-push')
+    compile project(':react-native-aliyun-emas')
     //添加结束
 }
 ```
@@ -227,13 +231,13 @@ import com.alibaba.sdk.android.push.register.GcmRegister;
 <details>
   <summary>ios配置</summary>
 
-1. 执行```react-native link react-native-aliyun-push```或手工添加node_modules/react-native-aliyun-push/ios/RCTAliyunPush.xcodeproj到xcode项目工程
+1. 执行```react-native link react-native-aliyun-emas```或手工添加node_modules/react-native-aliyun-emas/ios/RCTAliyunPush.xcodeproj到xcode项目工程
 
-2. 点击项目根节点，在targets app的```Build Settings```中找到```Framework search path```, 添加```$(PROJECT_DIR)/../node_modules/react-native-aliyun-push/ios/libs```
+2. 点击项目根节点，在targets app的```Build Settings```中找到```Framework search path```, 添加```$(PROJECT_DIR)/../node_modules/react-native-aliyun-emas/ios/libs```
 
 3. 添加阿里云移动推送SDK
 
-拖拽node_modules/react-native-aliyun-push/ios/libs下列目录到xcode工程的```frameworks```目录下，选择```create folder references```。
+拖拽node_modules/react-native-aliyun-emas/ios/libs下列目录到xcode工程的```frameworks```目录下，选择```create folder references```。
 
 - AlicloudUtils.framework
 - CloudPushSDK.framework
@@ -318,7 +322,7 @@ import com.alibaba.sdk.android.push.register.GcmRegister;
 
 引入模块
 ```
-import AliyunPush from 'react-native-aliyun-push';
+import AliyunPush from 'react-native-aliyun-emas';
 ```
 
 监听推送事件

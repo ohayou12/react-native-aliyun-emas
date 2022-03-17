@@ -1,11 +1,14 @@
 {
-    "name": "react-native-aliyun-push",
+    "name": "react-native-aliyun-emas",
     "version": "1.1.0",
-    "description": "A react native wrapper for aliyun push SDK",
+    "description": "react-native EMAS SDK",
     "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/wonday/react-native-aliyun-push.git"
+        "url": "git+https://github.com/evan0204/react-native-aliyun-emas.git"
     },
     "keywords": [
         "react-component",
@@ -16,15 +19,16 @@
         "ali",
         "push",
         "aliyun-push",
-        "ali-push"
+        "ali-push",
+        "emas"
     ],
     "author": {
-        "name": "Wonday",
-        "url": "https://github.com/wonday"
+        "name": "evan0204",
+        "url": "https://github.com/evan020"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wonday/react-native-aliyun-push/issues"
+        "url": "https://github.com/evan0204/react-native-aliyun-emas/issues"
     },
     "dependencies": {},
     "peerDependencies": {}
