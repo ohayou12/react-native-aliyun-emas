@@ -1,19 +1,25 @@
 # react-native-aliyun-emas
 [![npm](https://img.shields.io/npm/v/react-native-aliyun-emas.svg?style=flat-square)](https://www.npmjs.com/package/react-native-aliyun-emas)
 
-#### 首先感谢wonday的贡献，[此库是在wonday库的基础上进行升级维护](https://github.com/wonday/react-native-aliyun-push)
+#### 首先感谢wonday、evan0204的贡献，[此库是在wonday库的基础上进行升级维护](https://github.com/wonday/react-native-aliyun-push)
 
 #### 为了不造成重名问题，现更名为：react-native-aliyun-emas
 
 [阿里云移动推送](https://www.aliyun.com/product/cps?spm=5176.2020520107.0.0.fgXGFp)react-native封装组件
 
 #### 目前已完成Android12的匹配升级，升级到阿里云EMAS的SDK 3.7.4版本
-#### 注意EMAS SDK 3.7.4 的Android配置发生了变化，[具体参考](https://github.com/evan0204/react-native-aliyun-emas/issues/1)
+#### 注意EMAS SDK 3.7.4 的Android配置发生了变化，[具体参考](https://github.com/ohayou12/react-native-aliyun-emas/issues/1)
 
 
 
 <details>
   <summary>修改履历</summary> 
+v1.2.0
+
+1. Android SDK版本配置优先使用宿主项目配置的版本
+2. 更新阿里云EMAS SDK版本至3.8.7
+3. IOS移除了UTDID
+
 v1.1.0
 
 1. 完成Android12的匹配
@@ -54,7 +60,7 @@ v1.0.15
 1. 增加getInitialMessage方法
 2. add sample
 
-[[more]](https://github.com/evan0204/react-native-aliyun-emas/releases)
+[[more]](https://github.com/ohayou12/react-native-aliyun-emas/releases)
 </details>
 
 ## 前提
@@ -233,9 +239,11 @@ import com.alibaba.sdk.android.push.register.GcmRegister;
 
 1. 执行```react-native link react-native-aliyun-emas```或手工添加node_modules/react-native-aliyun-emas/ios/RCTAliyunPush.xcodeproj到xcode项目工程
 
-2. 点击项目根节点，在targets app的```Build Settings```中找到```Framework search path```, 添加```$(PROJECT_DIR)/../node_modules/react-native-aliyun-emas/ios/libs```
+2. 如果使用了其他aliyun的SDK，则跳过本步骤，否则必须手动添加`UTDID`SDK，。在`Podfile`文件中添加`pod 'UTDID'`，然后执行`npx pod-install`
 
-3. 添加阿里云移动推送SDK
+3. 点击项目根节点，在targets app的```Build Settings```中找到```Framework search path```, 添加```$(PROJECT_DIR)/../node_modules/react-native-aliyun-emas/ios/libs```
+
+4. 添加阿里云移动推送SDK
 
 拖拽node_modules/react-native-aliyun-emas/ios/libs下列目录到xcode工程的```frameworks```目录下，选择```create folder references```。
 

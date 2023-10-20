@@ -2,6 +2,30 @@ apply plugin: 'com.android.library'
 
 description = 'react-native-aliyun-push'
 
+
+def DEFAULT_COMPILE_SDK_VERSION = 29
+def DEFAULT_BUILD_TOOLS_VERSION = '29.0.3'
+def DEFAULT_MIN_SDK_VERSION = 16
+def DEFAULT_TARGET_SDK_VERSION = 29
+
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+android {
+    compileSdkVersion safeExtGet('compileSdkVersion', DEFAULT_COMPILE_SDK_VERSION)
+    buildToolsVersion safeExtGet('buildToolsVersion', DEFAULT_BUILD_TOOLS_VERSION)
+    defaultConfig {
+        minSdkVersion safeExtGet('minSdkVersion', DEFAULT_MIN_SDK_VERSION)
+        targetSdkVersion safeExtGet('targetSdkVersion', DEFAULT_TARGET_SDK_VERSION)
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
 buildscript {
     repositories {
         jcenter()
@@ -13,51 +37,44 @@ buildscript {
     }
 }
 
-android {
-    compileSdkVersion 31
-    buildToolsVersion '30.0.3'
-
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 31
-    }
-}
-
 repositories {
     jcenter()
 
     flatDir {
           dirs 'libs' //this way we can find the .aar file in libs folder
-      }
-      maven {
-          url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
-      }
-      // 配置HMS Core SDK的Maven仓地址。
-      maven {
-          url 'https://developer.huawei.com/repo/'
-      }
+    }
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+        name 'aliyun'//一定要添加这个配置
+        allowInsecureProtocol = true
+    }
+    // 配置HMS Core SDK的Maven仓地址。
+    maven {
+        url 'https://developer.huawei.com/repo/'
+        allowInsecureProtocol = true
+    }
 }
 
 dependencies {
 
     implementation 'com.facebook.react:react-native:+'
 
-    api ('com.aliyun.ams:alicloud-android-push:3.7.4') {
+    api ('com.aliyun.ams:alicloud-android-push:3.8.7') {
         exclude(module:'alicloud-android-utdid')
     }
-    api 'com.aliyun.ams:alicloud-android-third-push:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push:3.8.7'
     //华为依赖
-    api 'com.aliyun.ams:alicloud-android-third-push-huawei:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push-huawei:3.8.7'
     //小米依赖
-    api 'com.aliyun.ams:alicloud-android-third-push-xiaomi:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push-xiaomi:3.8.7'
     //OPPO依赖
-    api 'com.aliyun.ams:alicloud-android-third-push-oppo:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push-oppo:3.8.7'
     //vivo依赖
-    api 'com.aliyun.ams:alicloud-android-third-push-vivo:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push-vivo:3.8.7'
     //魅族依赖
-    api 'com.aliyun.ams:alicloud-android-third-push-meizu:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push-meizu:3.8.7'
     //谷歌依赖
-    api 'com.aliyun.ams:alicloud-android-third-push-fcm:3.7.4'
+    api 'com.aliyun.ams:alicloud-android-third-push-fcm:3.8.7'
 
     // shortcutBadger
     api 'me.leolin:ShortcutBadger:1.1.22@aar'
