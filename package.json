@@ -1,6 +1,6 @@
 {
     "name": "react-native-aliyun-emas",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "react-native EMAS SDK",
     "main": "index.js",
     "scripts": {

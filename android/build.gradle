@@ -60,7 +60,7 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
 
     api ('com.aliyun.ams:alicloud-android-push:3.8.7') {
-        exclude(module:'alicloud-android-utdid')
+        // exclude(module:'alicloud-android-utdid')
     }
     api 'com.aliyun.ams:alicloud-android-third-push:3.8.7'
     //华为依赖
